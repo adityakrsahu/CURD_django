@@ -1,0 +1,62 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+<style>
+    .regisform{
+        margin-top: 110px;
+        color: white;
+       
+    }
+    .regisform input{
+        margin: 10px;
+        
+    }
+    .regisform button{
+    margin-top: 27px;
+    background-color: orangered;
+    border: none;
+    padding: 4px;
+    width: 97px;
+    border-radius: 8px;
+    margin-left: 65px;
+}
+.regisform button:hover{
+    background: none;
+    border: 2px solid orangered;
+    color: white;
+}
+
+</style>
+
+</head>
+<body>
+    
+    {{data}}
+<form  class="regisform" action="{% url 'savedata' %}" method="post">
+    {% csrf_token %}
+    <center>
+    Enter Name : <input style="margin-left: 34px;" type="text" name="name">
+    <br>
+    Enter Email : <input style="margin-left: 38px;" type="text" name="email">
+    <br>
+    Enter Contact : <input style="margin-left: 21px;" type="text" name="contact">
+    <br>
+    Enter City : <input style="margin-left: 49px;" type="text" name="city">
+    <br>
+    Enter Password : <input type="text" name="password">
+    <br>
+    <button type="submit">Sign-up</button>
+</center>
+</form>
+</body>
+</html>
+{% endblock %}

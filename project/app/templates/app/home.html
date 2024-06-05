@@ -1,0 +1,22 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<h1 style="color: aqua; margin-top: 150px; margin-left: 190px;">{{data | default:'welcome to guest'}}</h1>
+<p style="color: white; margin: 100px; padding-left: 80px; padding-right: 410px;"  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus voluptatibus numquam quod unde ullam, nulla vero non repellendus ut quisquam molestias odio eos quibusdam architecto quam libero eaque culpa totam? Amet quo quaerat consequuntur voluptatem nisi ut tempora impedit suscipit dicta aperiam officiis, sed cupiditate ab architecto error! Velit, vero.</p>
+{% if data %}
+<a href="{% url 'delete' %}"><button>Logout</button></a>
+{% endif %}
+</body>
+</html>
+{% endblock %}

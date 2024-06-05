@@ -1,0 +1,31 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <center>
+        
+
+<form class="loginform" action="{% url 'logindata' %}" method="post">
+    {% csrf_token %}
+Enter Email: <input class="logininput1" type="text" name="email" placeholder="Enter the Email...">
+    <br>
+Enter Password : <input class="logininput2" type="password" name="password" placeholder="Enter the password..." >
+    <br>
+    <button class="loginbutton">Login</button>
+    
+</form>
+</center>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,55 @@
+*{
+    margin-top: 0px;
+    padding: 0px;
+
+}
+body{
+    background-color: black;
+  
+}
+.loginform{
+    margin-top: 11%;
+    color: white;
+
+}
+.loginform input{
+    margin-right: 20px;
+}
+.loginform .logininput1{
+    margin-left: 31px;
+    margin-bottom: 33px;
+}
+.loginbutton{
+    margin-top: 27px;
+    background-color: orangered;
+    border: none;
+    padding: 4px;
+    width: 97px;
+    border-radius: 8px;
+    margin-left: 65px;
+}
+.loginbutton:hover{
+    background: none;
+    border: 2px solid orangered;
+    color: white;
+}
+/* *********************navbar***************
+ */
+ .container-fluid{
+    background-color: orangered;
+    color: white;
+ 
+ }
+.nav-item {
+    margin-left: 110px;
+ }
+
+.queryportion input{
+    color: white;
+    margin-top: 70px;
+  
+ }
+
+   
+
+ 

@@ -1,0 +1,52 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+  
+
+<center>
+<table align="center" width="700px" style="border: 2px solid black;">
+
+  <form action="{% url 'search' pk=user.email %}" method="post">
+    {% csrf_token %}
+    <span style="color: white;">Search</span>
+    <input style="border-radius: 17px; width: 280px; padding: 7px;"  type="search" name="search">
+    <button style="background-color: orangered; width: 80px; padding: 4px; border-radius: 15px; " type="submit">submit</button>
+  </form>
+
+    <thead style="background-color: #E4FFEE; border: 2px solid black;">
+        <tr style="background-color: #E4FFEE; border: 2 px solid black;">
+            <!-- <th>OrderId</th> -->
+            <th>Id</th>
+            <th>Email</th>
+            <th>Query</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody style="background-color: #E4FFEE; border: 2 px solid black;">
+          {% for i in key1 %}
+        <tr align="center">
+            <td>{{i.id}}</td>
+            <td>{{i.Email}}</td>
+            <td>{{i.Query}}</td>
+            <th><a href="{% url 'edit' pk=i.id %}">Edit</a></th>
+            <td><a href="{% url 'delete' pk=i.id %}">Delete</a></td>
+            
+        </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+  </center>
+</body>
+</html>
+  {% endblock %}
